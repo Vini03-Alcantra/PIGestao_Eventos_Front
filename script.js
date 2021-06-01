@@ -21,15 +21,25 @@ const Modal = {
                 document.getElementById("DataIni").value = format.formatData(res.data.DataInicioEvento)
                 document.getElementById("DataFim").value = format.formatData(res.data.DataFimEvento)
                 document.getElementById("CargaHoraria").value = res.data.CargaHorarioTotal
-                let local = getInformations.findLocal(res.data.Espaco_idEspaco);
+                let local = getInformations.findLocal(res.data.Espaco_idEspaco).then((data) => {
+                    return data
+                });
                 console.log(local)
                 document.getElementById("espaco").value = local
                 
             })
     },
+
+    openProf(){
+        document
+            .querySelector(".modal-overlay-add")
+            .classList
+            .add("active")
+    },
+
     close(){
         document
-            .querySelector(".modal-overlay")
+            .querySelector(".modal-overlay-add")
             .classList
             .remove("active")
     }
