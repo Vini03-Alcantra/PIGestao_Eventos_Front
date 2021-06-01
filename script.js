@@ -1,3 +1,9 @@
+var axiosConfig = {
+    headers:{
+        Authorization: "Bearer " +localStorage.getItem("token")
+    }
+}
+
 const Modal = {
     open(evento){        
         console.log(evento)
@@ -8,7 +14,17 @@ const Modal = {
 
         axios.get(`http://localhost:3000/evento/${evento}`)
             .then(res => {
-                console.log(res)
+                console.log(res.data)
+                document.getElementById("name").value = res.data.EventoNome                
+                document.getElementById("quantidade").value = res.data.EventoQuantidade
+                document.getElementById("description").value = res.data.description
+                document.getElementById("DataIni").value = format.formatData(res.data.DataInicioEvento)
+                document.getElementById("DataFim").value = format.formatData(res.data.DataFimEvento)
+                document.getElementById("CargaHoraria").value = res.data.CargaHorarioTotal
+                let local = getInformations.findLocal(res.data.Espaco_idEspaco);
+                console.log(local)
+                document.getElementById("espaco").value = local
+                
             })
     },
     close(){
@@ -20,11 +36,6 @@ const Modal = {
 }
 
 
-var axiosConfig = {
-    headers:{
-        Authorization: "Bearer " +localStorage.getItem("token")
-    }
-}
 
 const evento = {
     eventContainer: document.querySelector("tbody"),
@@ -32,11 +43,11 @@ const evento = {
     eventos() {
         axios.get("http://localhost:3000/evento/")
         .then(res => {
-            evento.renderEvento(res.data)
+            evento.renderEventos(res.data)
         })
     },
 
-    renderEvento(eventos){        
+    renderEventos(eventos){        
         eventos.forEach((data, index) => {            
             const tr = document.createElement("tr")
     
@@ -61,12 +72,22 @@ const evento = {
         `
 
         return html;
-    }
+    },    
 }
 
 const format = {
     formatData(data){
         return data.substring(0, 10)
+    }
+}
+
+const getInformations = {
+    findLocal(id){        
+        axios.get(`http://localhost:3000/espaco/${id}`)
+            .then(res => {
+                let local = res.data.NomeEspaco
+                return local
+            })        
     }
 }
 
