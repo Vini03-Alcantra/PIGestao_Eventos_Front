@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-
+        <img id="logo-unifametro" src="https://lh3.googleusercontent.com/proxy/p4zBNg0djXYhrmK7tSp9_C4tMgbGoX-qDNE_f8lLGg27FC8uE3C9TGpHLpQiKjLyeV2hQVZBN4O5IQ69nFB_N9cmFiZmI1u6TjK_gT7BVuhyE9q_04zt8QatcLgZSsrdRPuSd3WY81Uo_78" alt="logo Unifametro">
     </header>
     <!--Cabeçalho-->
 
@@ -20,9 +20,9 @@
             <h2 class="sr-only"></h2>
         </section>
 
-        <section class="transsaction">
+        <section class="transaction">
             <h2 class="sr-only">Eventos</h2>
-            <a href="#" class="button new" onclick="Modal.openProf()">+ Novo Evento</a>
+            <a href="#" class="button new" onclick="ModalProf.openProf()">+ Novo Evento</a>
             <table id="data-table">
                 <thead>
                     <tr>
@@ -72,6 +72,10 @@
                         <label for="Espaco_idEspaco" class="sr-only">Espaco</label>
                         <input type="text" id="Espaco_idEspaco" name="Espaco_idEspaco" placeholder="">
                     </div>
+                    <div class="input-group actions">
+                        <a onclick="" href="#" class="button cancel">Cancelar</a>
+                        <button>Salvar</button>
+                    </div>                    
                 </form>
             </div>
         </div>
@@ -84,37 +88,37 @@
             <form action="" method="get">
                 <div class="output-group">
                     <label for="name" class="">Evento Nome</label>                    
-                    <input type="text" id="name" disabled>
+                    <input type="text" id="name" placeholder="Nome do Evento">
                 </div>
 
                 <div class="output-group">
                     <label for="" class="">Quantidade Vagas</label>                    
-                    <input type="text" id="quantidade" name="" disabled>
+                    <input type="number" id="quantidade" name="" placeholder="Quantidade de Vags">
                 </div>
 
                 <div class="output-group">
                     <label for="" class="">Descrição</label>                    
-                    <input type="text" id="description" name="" disabled>
+                    <input type="text" id="description" name="" placeholder="Descrição do Evento"> 
                 </div>
 
                 <div class="output-group">
                     <label for="" class="">Data Inicial do evento</label>                    
-                    <input type="text" id="DataIni" name="" disabled>
+                    <input type="datetime" id="DataIni" name="">
                 </div>
 
                 <div class="output-group">
                     <label for="" class="">Data Final do Evento</label>                    
-                    <input type="text" id="DataFim" name="" disabled>
+                    <input type="datetime" id="DataFim" name="">
                 </div>
 
                 <div class="output-group">
                     <label for="" class="">Carga Horária do evento</label>                    
-                    <input type="text" id="CargaHoraria" name="" disabled>
+                    <input type="number" id="CargaHoraria" name="" placeholder="Carga Horária do Evento">
                 </div>
 
                 <div class="output-group">
                     <label for="" class="">Espaço</label>                    
-                    <input type="text" id="espaco" name="" disabled>
+                    <input type="text" id="espaco" name="">
                 </div>
             </form>
         </div>
@@ -125,6 +129,7 @@
         <p>Gestão Eventos Unifametro</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./script_prof.js"></script>
     <script src="./script.js"></script>
 
 </body>

@@ -30,12 +30,7 @@ const Modal = {
             })
     },
 
-    openProf(){
-        document
-            .querySelector(".modal-overlay-add")
-            .classList
-            .add("active")
-    },
+    
 
     close(){
         document
