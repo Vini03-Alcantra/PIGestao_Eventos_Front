@@ -34,7 +34,7 @@ const Modal = {
 
     close(){
         document
-            .querySelector(".modal-overlay-add")
+            .querySelector(".modal-overlay")
             .classList
             .remove("active")
     }

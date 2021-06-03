@@ -98,7 +98,7 @@ button:hover{
 
 /* Header ================= */
 header{
-    background: #2d4a22;
+    background: #76b44f;
     /* padding: 0rem 0 1rem; */
     text-align: center;
 }
@@ -121,19 +121,23 @@ header{
     color: #969cb3;
 }
 
-table th{
+th{
     background: white;
-    font-weight: normal;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
     padding: 1rem 2rem;
     text-align: left;
 }
 
 table tbody tr{
-    opacity: .7;
+    color: #000;
+    opacity: .8;
 }
 
 table tbody tr:hover{
     opacity: 1;
+    font-size: 900;
 }
 
 table td{
