@@ -14,6 +14,24 @@ const ModalProf = {
     }
 }
 
+const createEvento = {
+    postEvento(){
+        // document.getElementById("createEvent").addEventListener("submit", (event) => {
+        //     event.preventDefault()
+
+            EventoNome = document.getElementById("EventoNome").value;
+            EventoQuantidade = document.getElementById("EventoQuantidade").value;
+            description = document.getElementById("description").value;
+            DataInicioEvento = document.getElementById("DataInicioEvento").value;
+            DataFimEvento = document.getElementById("DataFimEvento").value;
+            CargaHorarioTotal = document.getElementById("CargaHorarioTotal").value;
+            Espaco_idEspaco = document.getElementById("Espaco_idEspaco").value;
+
+            console.log(EventoNome + EventoQuantidade +  description + DataInicioEvento + DataFimEvento + CargaHorarioTotal + Espaco_idEspaco)
+            alert(EventoNome)            
+        // })
+    }
+}
 
 
 const evento = {

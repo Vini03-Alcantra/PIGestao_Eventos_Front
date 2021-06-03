@@ -39,7 +39,7 @@
         <div class="modal-add">
             <div class="form">
                 <h2>Cadastrar Evento</h2>
-                <form action="" onsubmit="Form">
+                <form id="createEvent"  onsubmit="createEvento.postEvento()">
                     <div class="input-group">
                         <label for="EventoNome" class="sr-label">Nome</label>
                         <input type="text" id="EventoNome" name="EventoNome" placeholder="Nome do Evento">
@@ -50,11 +50,12 @@
                     </div>
                     <div class="input-group">
                         <label for="description" class="sr-label">Descrição</label>
-                        <input type="text" id="description" name="description" placeholder="Descrição Evento">
+                        <!-- <input type="text" id="description" name="description" placeholder="Descrição Evento"> -->
+                        <textarea name="" id="description" cols="30" rows="5"></textarea>
                     </div>
                     <div class="input-group">
                         <label for="DataInicioEvento" class="sr-label">Data Inicio Evento</label>
-                        <input type="datetime" id="DataInicioEvento" name="DataInicioEvento" placeholder="">
+                        <input type="datetime-local" id="DataInicioEvento" name="DataInicioEvento" placeholder="">
                     </div>
                     <div class="input-group">
                         <label for="DataFimEvento" class="sr-label">Data Fim Evento</label>
