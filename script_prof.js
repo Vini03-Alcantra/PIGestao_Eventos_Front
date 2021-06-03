@@ -75,6 +75,43 @@ const evento = {
     },    
 }
 
+const Modal = {
+    open(evento){        
+        console.log(evento)
+        document    
+            .querySelector(".modal-overlay")
+            .classList
+            .add("active")
+
+        axios.get(`http://localhost:3000/evento/${evento}`)
+            .then(res => {
+                console.log(res.data)
+                document.getElementById("name").value = res.data.EventoNome                
+                document.getElementById("quantidade").value = res.data.EventoQuantidade
+                document.getElementById("description").value = res.data.description
+                document.getElementById("DataIni").value = format.formatData(res.data.DataInicioEvento)
+                document.getElementById("DataFim").value = format.formatData(res.data.DataFimEvento)
+                document.getElementById("CargaHoraria").value = res.data.CargaHorarioTotal
+                let local = getInformations.findLocal(res.data.Espaco_idEspaco).then((data) => {
+                    return data
+                });
+                console.log(local)
+                document.getElementById("espaco").value = local
+                
+            })
+    },
+
+    
+
+    close(){
+        document
+            .querySelector(".modal-overlay")
+            .classList
+            .remove("active")
+    }
+}
+
+
 const format = {
     formatData(data){
         return data.substring(0, 10)
