@@ -16,10 +16,6 @@
     <!--Cabeçalho-->
 
     <main class="container">
-        <section id="balance">
-            <h2 class="sr-only"></h2>
-        </section>
-
         <section class="transaction">
             <h2 class="sr-only">Eventos</h2>
             <a href="#" class="button new" onclick="ModalProf.openProf()">+ Novo Evento</a>
@@ -40,37 +36,37 @@
     </main>
 
     <div class="modal-overlay-add">
-        <div class="modal">
+        <div class="modal-add">
             <div class="form">
                 <h2>Cadastrar Evento</h2>
                 <form action="" onsubmit="Form">
                     <div class="input-group">
-                        <label for="EventoNome" class="sr-only">Nome</label>
-                        <input type="text" id="EventoNome" name="EventoNome" placeholder="">
+                        <label for="EventoNome" class="sr-label">Nome</label>
+                        <input type="text" id="EventoNome" name="EventoNome" placeholder="Nome do Evento">
                     </div>
                     <div class="input-group">
-                        <label for="EventoQuantidade" class="sr-only">Quantidade</label>
-                        <input type="text" id="EventoQuantidade" name="EventoQuantidade" placeholder="">
+                        <label for="EventoQuantidade" class="sr-label">Quantidade</label>
+                        <input type="number" id="EventoQuantidade" name="EventoQuantidade" placeholder="">
                     </div>
                     <div class="input-group">
-                        <label for="description" class="sr-only">Descrição</label>
-                        <input type="text" id="description" name="description" placeholder="">
+                        <label for="description" class="sr-label">Descrição</label>
+                        <input type="text" id="description" name="description" placeholder="Descrição Evento">
                     </div>
                     <div class="input-group">
-                        <label for="DataInicioEvento" class="sr-only">Data Inicio Evento</label>
-                        <input type="text" id="DataInicioEvento" name="DataInicioEvento" placeholder="">
+                        <label for="DataInicioEvento" class="sr-label">Data Inicio Evento</label>
+                        <input type="datetime" id="DataInicioEvento" name="DataInicioEvento" placeholder="">
                     </div>
                     <div class="input-group">
-                        <label for="DataFimEvento" class="sr-only">Data Fin Evento</label>
-                        <input type="text" id="DataFimEvento" name="DataFimEvento" placeholder="">
+                        <label for="DataFimEvento" class="sr-label">Data Fim Evento</label>
+                        <input type="datetime-local" id="DataFimEvento" name="DataFimEvento" placeholder="">
                     </div>
                     <div class="input-group">
-                        <label for="CargaHorarioTotal" class="sr-only">Carha Horária</label>
-                        <input type="text" id="CargaHorarioTotal" name="CargaHorarioTotal" placeholder="">
+                        <label for="CargaHorarioTotal" class="sr-label">Carha Horária</label>
+                        <input type="number" id="CargaHorarioTotal" name="CargaHorarioTotal" placeholder="">
                     </div>
                     <div class="input-group">
-                        <label for="Espaco_idEspaco" class="sr-only">Espaco</label>
-                        <input type="text" id="Espaco_idEspaco" name="Espaco_idEspaco" placeholder="">
+                        <label for="Espaco_idEspaco" class="sr-label">Espaco</label>
+                        <input type="text" id="Espaco_idEspaco" name="Espaco_idEspaco" placeholder="Espaço">
                     </div>
                     <div class="input-group actions">
                         <a onclick="" href="#" class="button cancel">Cancelar</a>
@@ -88,7 +84,7 @@
             <form action="" method="get">
                 <div class="output-group">
                     <label for="name" class="">Evento Nome</label>                    
-                    <input type="text" id="name" placeholder="Nome do Evento">
+                    <input type="text" id="name" placeholder="">
                 </div>
 
                 <div class="output-group">

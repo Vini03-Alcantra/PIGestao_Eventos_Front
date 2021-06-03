@@ -184,7 +184,7 @@ td.expense{
     opacity: 0;
     visibility: hidden;
     z-index: 999;
-}
+} 
 
 .modal-overlay.active{
     opacity: 1;
@@ -221,20 +221,21 @@ td.expense{
     visibility: visible;
 }
 
-.modal{
+.modal-add{    
+    width: 30%;
     background: #F0F2f5;
-    padding: 2.4rem;
+    padding: 2rem 4rem;
     position: relative;
     z-index: 1;
 }
 
 
 /* Form */
-#form{
+.form{
     max-width: 500px;
 }
 
-#form h2{
+.form h2{
     margin-top: 0;
 }
 
@@ -242,15 +243,11 @@ input {
     border: none;
     border-radius: .2rem;
     padding: .8rem;
-    width: 100%;
+    width: 50%;
 }
 
 .input-group{
     margin-top: .8rem;
-}
-
-.input-group small{
-    opacity: .4;
 }
 
 .input-group.actions{
