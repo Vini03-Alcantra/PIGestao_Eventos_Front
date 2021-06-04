@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de eventos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img id="logo-unifametro" src="assets/unifametro-logo.png" alt="logo Unifametro">
+    </header>
+    <!--Cabeçalho-->
+
+    <main class="container">
+        <section class="transaction">
+            <h2 class="sr-only">Eventos</h2>
+            <a href="#" class="button new" onclick="ModalProf.openProf()">+ Novo Evento</a>
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>Nome Evento</th>
+                        <th>Descrição</th>
+                        <th>Data</th>
+                        <th>Excluir</th>
+                        <th>Mais</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <div class="modal-overlay-add">
+        <div class="modal-add">
+            <div class="form">
+                <h2>Cadastrar Evento</h2>
+                <form id="createEvent"  onsubmit="createEvento.postEvento()">
+                    <div class="input-group">
+                        <label for="EventoNome" class="sr-label">Nome</label>
+                        <input type="text" id="EventoNome" name="EventoNome" placeholder="Nome do Evento">
+                    </div>
+                    <div class="input-group">
+                        <label for="EventoQuantidade" class="sr-label">Quantidade</label>
+                        <input type="number" id="EventoQuantidade" name="EventoQuantidade" placeholder="">
+                    </div>
+                    <div class="input-group">
+                        <label for="description" class="sr-label">Descrição</label>                        
+                        <textarea name="" id="description" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="input-group">
+                        <label for="DataInicioEvento" class="sr-label">Data Inicio Evento</label>
+                        <input type="datetime-local" id="DataInicioEvento" name="DataInicioEvento" placeholder="">
+                    </div>
+                    <div class="input-group">
+                        <label for="DataFimEvento" class="sr-label">Data Fim Evento</label>
+                        <input type="datetime-local" id="DataFimEvento" name="DataFimEvento" placeholder="">
+                    </div>
+                    <div class="input-group">
+                        <label for="CargaHorarioTotal" class="sr-label">Carha Horária</label>
+                        <input type="number" id="CargaHorarioTotal" name="CargaHorarioTotal" placeholder="">
+                    </div>
+                    <div class="input-group">
+                        <label for="Espaco_idEspaco" class="sr-label">Espaco</label>
+                        <input type="text" id="Espaco_idEspaco" name="Espaco_idEspaco" placeholder="Espaço">
+                    </div>
+                    <div class="input-group actions">
+                        <a onclick="ModalProf.close()" href="#" class="button cancel">Cancelar</a>
+                        <button>Salvar</button>
+                    </div>                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <div class="form">
+            <h2>Detalhes do Evento</h2>
+            <form action="" method="get">
+                <div class="output-group">
+                    <label for="name" class="">Evento Nome</label>                    
+                    <input type="text" id="name" placeholder="">
+                </div>
+
+                <div class="output-group">
+                    <label for="" class="">Quantidade Vagas</label>                    
+                    <input type="number" id="quantidade" name="" placeholder="Quantidade de Vags">
+                </div>
+
+                <div class="output-group">
+                    <label for="" class="">Descrição</label>                    
+                    <input type="text" id="description" name="" placeholder="Descrição do Evento"> 
+                </div>
+
+                <div class="output-group">
+                    <label for="" class="">Data Inicial do evento</label>                    
+                    <input type="datetime" id="DataIni" name="">
+                </div>
+
+                <div class="output-group">
+                    <label for="" class="">Data Final do Evento</label>                    
+                    <input type="datetime" id="DataFim" name="">
+                </div>
+
+                <div class="output-group">
+                    <label for="" class="">Carga Horária do evento</label>                    
+                    <input type="number" id="CargaHoraria" name="" placeholder="Carga Horária do Evento">
+                </div>
+
+                <div class="output-group">
+                    <label for="" class="">Espaço</label>                    
+                    <input type="text" id="espaco" name="">
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Gestão Eventos Unifametro</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./script_prof.js"></script>    
+</body>
+</html>
