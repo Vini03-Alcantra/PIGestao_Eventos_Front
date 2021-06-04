@@ -15,10 +15,7 @@ const ModalProf = {
 }
 
 const createEvento = {
-    async postEvento(){
-        // document.getElementById("createEvent").addEventListener("submit", (event) => {
-        //     event.preventDefault()
-
+    async postEvento(){        
             EventoNome = document.getElementById("EventoNome").value;
             EventoQuantidade = document.getElementById("EventoQuantidade").value;
             description = document.getElementById("description").value;
@@ -30,9 +27,7 @@ const createEvento = {
             console.log(EventoNome + EventoQuantidade +  description + DataInicioEvento + DataFimEvento + CargaHorarioTotal + Espaco_idEspaco)
             let evento = {EventoNome, EventoQuantidade, description, DataInicioEvento, DataFimEvento, CargaHorarioTotal, Espaco_idEspaco}
             var result = await axios.post("http://localhost:3000/evento", evento)
-            console.log(result.data)
-            // axios.            
-        // })
+            console.log(result.data)            
     }
 }
 

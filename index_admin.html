@@ -18,7 +18,7 @@
     <main class="container">
         <section class="transaction">
             <h2 class="sr-only">Eventos</h2>
-            <a href="#" class="button new" onclick="ModalProf.openProf()">+ Novo Evento</a>
+            <a href="#" class="button new" onclick="ModalAdmin.openAdmin()">+ Novo Evento</a>
             <table id="data-table">
                 <thead>
                     <tr>
@@ -40,7 +40,7 @@
         <div class="modal-add">
             <div class="form">
                 <h2>Cadastrar Evento</h2>
-                <form id="createEvent"  onsubmit="createEvento.postEvento()">
+                <form id="createEvent"  onsubmit="createEvento.postEvento()">                    
                     <div class="input-group">
                         <label for="EventoNome" class="sr-label">Nome</label>
                         <input type="text" id="EventoNome" name="EventoNome" placeholder="Nome do Evento">
@@ -70,7 +70,7 @@
                         <input type="text" id="Espaco_idEspaco" name="Espaco_idEspaco" placeholder="Espaço">
                     </div>
                     <div class="input-group actions">
-                        <a onclick="ModalProf.close()" href="#" class="button cancel">Cancelar</a>
+                        <a onclick="ModalAdmin.close()" href="#" class="button cancel">Cancelar</a>
                         <button>Salvar</button>
                     </div>                    
                 </form>
@@ -83,6 +83,8 @@
             <div class="form">
             <h2>Detalhes do Evento</h2>
             <form action="" method="get">
+                
+                <input type="hidden" name="id" id="id"> 
                 <div class="output-group">
                     <label for="name" class="">Evento Nome</label>                    
                     <input type="text" id="name" placeholder="">
@@ -126,6 +128,6 @@
         <p>Gestão Eventos Unifametro</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./script_prof.js"></script>    
+    <script src="./script_admin.js"></script>    
 </body>
 </html>

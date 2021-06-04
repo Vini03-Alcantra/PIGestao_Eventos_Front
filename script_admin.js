@@ -1,5 +1,5 @@
-const ModalProf = {
-    openProf(){
+const ModalAdmin = {
+    openAdmin(){
         document
             .querySelector(".modal-overlay-add")
             .classList
@@ -15,10 +15,7 @@ const ModalProf = {
 }
 
 const createEvento = {
-    async postEvento(){
-        // document.getElementById("createEvent").addEventListener("submit", (event) => {
-        //     event.preventDefault()
-
+    async postEvento(){            
             EventoNome = document.getElementById("EventoNome").value;
             EventoQuantidade = document.getElementById("EventoQuantidade").value;
             description = document.getElementById("description").value;
@@ -31,8 +28,6 @@ const createEvento = {
             let evento = {EventoNome, EventoQuantidade, description, DataInicioEvento, DataFimEvento, CargaHorarioTotal, Espaco_idEspaco}
             var result = await axios.post("http://localhost:3000/evento", evento)
             console.log(result.data)
-            // axios.            
-        // })
     }
 }
 
@@ -67,12 +62,24 @@ const evento = {
             <td class="">${evento.description}</td>
             <td class="date">${date}</td>
             <td>
-                <img onclick="Modal.open(${id})" src="./assets/information.svg" alt="Detalhes de evento">
+                <img onclick="evento.removeEvento(${id})" src="./assets/trash.png" alt="Detalhes de evento">
             </td> 
-        `
+            <td>
+                <img onclick="Modal.open(${id})" src="./assets/information.svg" alt="Detalhes de evento">
+            </td>
+        `   
 
         return html;
     },    
+
+    async removeEvento(idEvento){
+        const urlParams = new URLSearchParams(window.location.search)
+        const myParams = urlParams.get("EventoNome")
+        console.log(myParams)
+        console.log(idEvento)
+        var result = await axios.delete(`http://localhost:3000/evento/${idEvento}`)
+        console.log(result)
+    }
 }
 
 const Modal = {
@@ -86,6 +93,7 @@ const Modal = {
         axios.get(`http://localhost:3000/evento/${evento}`)
             .then(res => {
                 console.log(res.data)
+                document.getElementById("id").value = res.data.idEvento                
                 document.getElementById("name").value = res.data.EventoNome                
                 document.getElementById("quantidade").value = res.data.EventoQuantidade
                 document.getElementById("description").value = res.data.description
@@ -100,8 +108,6 @@ const Modal = {
                 
             })
     },
-
-    
 
     close(){
         document
