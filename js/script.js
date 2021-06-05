@@ -72,7 +72,7 @@ const evento = {
             <td class="">${evento.description}</td>
             <td class="date">${date}</td>
             <td>
-                <img onclick="Modal.open(${id})" src="./assets/information.svg" alt="Detalhes de evento">
+                <img onclick="Modal.open(${id})" src="../assets/information.svg" alt="Detalhes de evento">
             </td> 
         `
 
